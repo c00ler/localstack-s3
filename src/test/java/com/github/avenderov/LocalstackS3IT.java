@@ -63,8 +63,8 @@ public class LocalstackS3IT {
 
     @Before
     public void beforeEach() throws IOException {
-        final String serviceEndpoint =
-                String.format("http://%s:%d", localstack.getContainerIpAddress(), localstack.getMappedPort(4572));
+        final String serviceEndpoint = String.format("http://%s:%d",
+                localstack.getContainerIpAddress(), localstack.getMappedPort(LOCALSTACK_S3_PORT));
 
         amazonS3 = AmazonS3ClientBuilder
                 .standard()
